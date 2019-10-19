@@ -1,13 +1,17 @@
 import React from 'react';
-// import User from './user';
-import Test from './qr';
-import './App.css';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Landing from './components/landing';
+import Login from './components/login';
+import './style.css';
 
 function App() {
   return (
-    <div className="App">
-      <Test/>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/" component={Landing} exact/>
+        <Route path="/login/:who" component={Login} exact/>
+      </Switch>
+    </Router>
   );
 }
 

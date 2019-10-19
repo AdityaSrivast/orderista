@@ -1,0 +1,48 @@
+.landing-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.landing-section img {
+  /* background: url('../../images/rest_back.jpg'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* min-height: 100vh; */
+  width: fill-available;
+  width: -webkit-fill-available;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  position: fixed;
+}
+
+.landing-section .paper {
+  min-height: 100vh;
+}
+
+.landing-section .form {
+  z-index: 2;
+  text-align: center;
+  height: 300px;
+  width: 400px;
+  background: #f0f0f0;
+  border-radius: 30px;
+}
+.landing-section .form h3 {
+  margin-bottom: 50px;
+  font-size: 2rem;
+}
+.landing-section .form button {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  background-color: #1e88e5;
+  color: #fff;
+  box-shadow: 2px 2px #666;
+  outline: none;
+  border-radius: 20px;
+}
+.landing-section .form button:hover {
+  box-shadow: none;
+}
