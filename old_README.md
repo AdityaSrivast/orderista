@@ -1,8 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project aims to order food from restaurants with ease and also enables the user to have an insightful user experience.
-It is implemented using React.
-
 ## Available Scripts
 
 In the project directory, you can run:
