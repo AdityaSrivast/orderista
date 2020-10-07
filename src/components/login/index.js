@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { Paper, TextField, Button } from '@material-ui/core';
 import '../landing/landing.css';
 import './login.css';
 import rest_back from '../../images/rest_back.jpg';
 
-class Login extends Component {
-  state = {
-    role: 'user',
-    username: '',
-    password: ''
+const Login = (props) => {
+  let [role,setRole]=useState(props.match.params.who)
+  let [username,setUsername]=useState('')
+  let [password,setPassword]=useState('')
+
+  const handleUsername = () => event => {
+    setUsername(event.target.value)
   }
-  handleChange = name => event => {
-    this.setState({[name]: event.target.value });
-  };
-  componentDidMount() {
-    this.setState({ role: this.props.match.params.who });
+
+  const handlePassword = () => event => {
+    setPassword(event.target.value)
   }
-  render() {
-    console.log(this.state.role);
-    const { role, username, password } = this.state;
     return (
       <section className="landing-section login-section">
         <img src={rest_back} alt="Orderista" />
         <Paper className="form">
           <h3>Orderista</h3>
-          <form onSubmit={this.Login}>
+          <form onSubmit={Login}>
             <TextField
               id="outlined-name"
               label={role === 'user' ? "Username" : "Restaurant Name"}
               value={username}
-              onChange={this.handleChange('username')}
+              onChange={handleUsername()}
               margin="normal"
               variant="outlined"
             />
@@ -39,7 +36,7 @@ class Login extends Component {
               type="password"
               label="Password"
               value={password}
-              onChange={this.handleChange('password')}
+              onChange={handlePassword()}
               margin="normal"
               variant="outlined"
             />
@@ -52,6 +49,5 @@ class Login extends Component {
       </section>
     );
   }
-}
 
 export default Login;
